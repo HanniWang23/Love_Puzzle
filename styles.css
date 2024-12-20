@@ -1,23 +1,24 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: black;
+    background: url('https://windybot.com/clip/dark-starry-night-background-mobile-iphone-background-wallpaper/lfw6IIuKTazmwZnAEVyI') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
-  }
-  
-  .puzzle {
+}
+
+.puzzle {
     display: grid;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 10px;
-  }
-  
-  .piece {
+}
+
+.piece {
     position: relative;
     width: 100px;
     height: 100px;
@@ -32,13 +33,13 @@ body {
     transform-style: preserve-3d;
     transform: rotateY(0);
     transition: transform 0.8s;
-  }
-  
-  .piece:hover {
+}
+
+.piece:hover {
     background: rgba(255, 255, 255, 0.2);
-  }
-  
-  .piece::after {
+}
+
+.piece::after {
     content: attr(data-back);
     position: absolute;
     top: 0;
@@ -53,5 +54,4 @@ body {
     text-align: center;
     backface-visibility: hidden;
     transform: rotateY(180deg);
-  }
-  
+}
