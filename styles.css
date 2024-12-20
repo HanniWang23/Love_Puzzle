@@ -1,8 +1,7 @@
 body {
     margin: 0;
     font-family: Times New Roman, sans-serif;
-    background: url('blob:https://github.com/d2a92310-060d-4477-b283-71a283526d56') no-repeat center center fixed;
-    background-size: cover;
+    background: cyan;
     color: white;
     display: flex;
     justify-content: center;
