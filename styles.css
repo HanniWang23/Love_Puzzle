@@ -2,9 +2,10 @@ body {
     margin: 0;
     font-family: Times New Roman, sans-serif;
     background: url('https://raw.githubusercontent.com/HanniWang23/Love_Puzzle/main/6764f5b9db58c_download.jpg') no-repeat center center fixed;
-    background-size: contain; /* Adjust image to fit the container without cropping */
-    background-position: center center; /* Keep the image centered */
-    background-attachment: fixed; /* Ensure the background stays in place on scroll */
+    background-size: contain; /* Ensure image fits without cropping */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Fix background position during scroll */
+    background-repeat: no-repeat; /* Prevent image from repeating */
     color: white;
     display: flex;
     justify-content: center;
@@ -15,15 +16,15 @@ body {
 
 .puzzle {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 10px;
+    grid-template-columns: repeat(4, 120px); /* Increased piece size */
+    grid-template-rows: repeat(3, 120px); /* Increased piece size */
+    gap: 12px;
 }
 
 .piece {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 120px; /* Adjusted to make pieces slightly bigger */
+    height: 120px; /* Adjusted to make pieces slightly bigger */
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid white;
     color: white;
@@ -48,7 +49,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.7); /* Slight transparency to show background when flipped */
     color: black;
     display: flex;
     justify-content: center;
