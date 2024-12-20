@@ -13,26 +13,26 @@ body {
 
 /* Add padding/margins around the puzzle */
 .puzzle-container {
-  margin: 40px; /* Add space around the puzzle */
+  margin: 40px; /* Space around the puzzle */
   padding: 20px;
   background: rgba(255, 255, 255, 0.05); /* Slight glow for the container */
   border: 2px solid white;
   border-radius: 15px; /* Rounded corners for aesthetics */
 }
 
-/* Grid layout for the puzzle */
+/* Grid layout for the puzzle with adjusted size */
 .puzzle {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(4, 180px); /* Adjust to 180px per column */
+  grid-template-rows: repeat(3, 180px); /* Adjust to 180px per row */
   gap: 10px;
 }
 
-/* Styling for each puzzle piece */
+/* Styling for each puzzle piece with adjusted size */
 .piece {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 180px; /* Adjusted size for the puzzle piece */
+  height: 180px; /* Adjusted size for the puzzle piece */
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid white;
   color: white;
@@ -50,6 +50,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* Styling for the back side of the puzzle piece */
 .piece::after {
   content: attr(data-back);
   position: absolute;
