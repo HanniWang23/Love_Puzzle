@@ -2,10 +2,10 @@ body {
     margin: 0;
     font-family: Times New Roman, sans-serif;
     background: url('https://raw.githubusercontent.com/HanniWang23/Love_Puzzle/main/6764f5b9db58c_download.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensures the image fills the entire background without zooming in too much */
-    background-position: center center; /* Centers the image */
-    background-attachment: fixed; /* Keeps the background fixed when scrolling */
-    background-repeat: no-repeat; /* Prevents image from repeating */
+    background-size: cover; /* Ensures background covers the entire screen */
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: white;
     display: flex;
     justify-content: center;
@@ -16,16 +16,16 @@ body {
 
 .puzzle {
     display: grid;
-    grid-template-columns: repeat(5, 120px); /* Increased pieces and added another column */
-    grid-template-rows: repeat(4, 120px); /* Increased pieces and added another row */
+    grid-template-columns: repeat(4, 120px); /* Adjusted for 4 columns */
+    grid-template-rows: repeat(5, 120px); /* Adjusted for 5 rows */
     gap: 12px;
 }
 
 .piece {
     position: relative;
-    width: 120px; /* Adjusted size of pieces */
-    height: 120px; /* Adjusted size of pieces */
-    background: rgba(255, 255, 255, 0.1); /* Slight transparency on front */
+    width: 120px; /* Adjusted piece size */
+    height: 120px; /* Adjusted piece size */
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid white;
     color: white;
     display: flex;
@@ -36,6 +36,7 @@ body {
     transform-style: preserve-3d;
     transform: rotateY(0);
     transition: transform 0.8s;
+    z-index: 1; /* Ensures the front side remains visible */
 }
 
 .piece:hover {
@@ -49,7 +50,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Slight transparency on back */
+    background: rgba(255, 255, 255, 0.7); /* Slight transparency to show the background */
     color: black;
     display: flex;
     justify-content: center;
@@ -57,4 +58,5 @@ body {
     text-align: center;
     backface-visibility: hidden;
     transform: rotateY(180deg);
+    z-index: 0; /* Ensures flipped side is behind the front side */
 }
