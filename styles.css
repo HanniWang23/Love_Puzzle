@@ -1,71 +1,68 @@
+/* General Page Styling */
 body {
-    margin: 0;
-    font-family: Times New Roman, sans-serif;
-    background: url('https://raw.githubusercontent.com/HanniWang23/Love_Puzzle/main/6764f5b9db58c_download.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensures background covers the entire screen */
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
+/* Add padding/margins around the puzzle */
+.puzzle-container {
+  margin: 40px; /* Add space around the puzzle */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05); /* Slight glow for the container */
+  border: 2px solid white;
+  border-radius: 15px; /* Rounded corners for aesthetics */
+}
+
+/* Grid layout for the puzzle */
 .puzzle {
-    display: grid;
-    grid-template-columns: repeat(4, 120px); /* 4 columns for 20 pieces */
-    grid-template-rows: repeat(5, 120px); /* 5 rows for 20 pieces */
-    gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
 }
 
+/* Styling for each puzzle piece */
 .piece {
-    position: relative;
-    width: 180px; /* Piece size */
-    height: 180px; /* Piece size */
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid white;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transform: rotateY(0);
-    transition: transform 0.8s;
-    z-index: 1; /* Ensures the front side remains visible */
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: rotateY(0);
+  transition: transform 0.8s;
 }
 
 .piece:hover {
-    background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Hides the front word when flipped */
-.piece.flipped {
-    transform: rotateY(180deg);
-}
-
-.piece .front {
-    backface-visibility: hidden; /* Ensures the front is hidden when flipped */
-    z-index: 2;
-}
-
-.piece .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7); /* Slight transparency to show the background */
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    z-index: 0; /* Ensures flipped side is behind the front side */
+.piece::after {
+  content: attr(data-back);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 }
