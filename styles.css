@@ -2,7 +2,9 @@ body {
     margin: 0;
     font-family: Times New Roman, sans-serif;
     background: url('https://raw.githubusercontent.com/HanniWang23/Love_Puzzle/main/6764f5b9db58c_download.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-size: contain; /* Adjust image to fit the container without cropping */
+    background-position: center center; /* Keep the image centered */
+    background-attachment: fixed; /* Ensure the background stays in place on scroll */
     color: white;
     display: flex;
     justify-content: center;
