@@ -1,67 +1,57 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background-color: black;
-    color: white;
+    margin: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden;
-}
-
-.puzzle-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    width: 80%;
-    margin: 50px auto;
-    perspective: 1500px; /* Adds 3D effect for the flipping */
-}
-
-.puzzle-piece {
-    background-color: rgba(0, 0, 0, 0.7);
+    background: black;
     color: white;
-    font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
-    border: 1px solid white;
-    border-radius: 10px;
-    cursor: pointer;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .puzzle {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+  }
+  
+  .piece {
     position: relative;
-    transition: transform 0.5s;
+    width: 130px;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    flex-wrap: wrap;
-}
-
-.puzzle-piece::before {
-    content: attr(data-word);
-}
-
-.puzzle-piece.flipped {
-    transform: rotateY(180deg);
-}
-
-.puzzle-piece .back {
-    position: absolute;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    padding: 20px;
-}
-
-.puzzle-container::after {
-    content: "";
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    transition: transform 0.8s;
+  }
+  
+  .piece:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .piece::after {
+    content: attr(data-back);
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://www.w3schools.com/w3images/stars.jpg') no-repeat center center;
-    background-size: cover;
-    opacity: 0.5;
-    z-index: -1;
-}
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+  }
+  
